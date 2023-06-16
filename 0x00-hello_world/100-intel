@@ -1,2 +1,2 @@
 #!/bin/bash
-gvv *S -masm=intel $CFILE
+gvv *S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
