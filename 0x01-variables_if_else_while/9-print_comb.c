@@ -3,7 +3,7 @@
 /**
  * main - prints all possible combinations of single-digit numbers
  *
- * Result: 0(success)
+ * Result: always 0(success)
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 		putchar(n);
 		if (n != 57)
 		{
-			putchar(', ');
+			putchar(',');
 			putchar(' ');
 		}
 	}
