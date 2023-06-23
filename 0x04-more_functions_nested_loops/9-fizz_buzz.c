@@ -1,40 +1,37 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _putchar - Prints a character to stdout
- * @c: The character to be printed
+ * main - prints numbers from 1 to 100, with multiples of 3 as fizz
+ * and multiples of 5 as buzz
+ * Return: 0(success)
  */
-void _putchar(char c)
-{
-	write(1, &c, 1);
-}
-/**
- * fizz_buzz - Prints numbers from 1 to 100, replacing multiples of 3 with Fizz
- *             multiples of 5 with Buzz, and multiples of both with FizzBuzz.
- */
-void fizz_buzz(void)
+int main(void)
 {
 	int i;
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-			puts("FizzBuzz");
-		else if (i % 3 == 0)
-			puts("Fizz");
-		else if (i % 5 == 0)
-			puts("Buzz");
+		if (i % 3 == 0 && i % 5 != 0)
+		{
+			printf(" Fizz");
+		}
+		else if (i % 5 == 0 && i % 3 != 0)
+		{
+			printf(" Buzz");
+		}
+		else if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf(" FizzBuzz");
+		}
+		else if (i == 1)
+		{
+			printf("%d", i);
+		}
 		else
-			_putchar(i + '0');
-
-		if (i != 100)
-			_putchar(' ');
+		{
+			printf(" %d", i);
+		}
 	}
-
-	_putchar('\n');
-}
-int main(void)
-{
-	fizz_buzz();
-	return 0;
+	printf("\n");
+	return (0);
 }
