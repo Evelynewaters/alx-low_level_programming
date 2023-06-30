@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
-char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 /**
  * rot13 - encoder rot13
  * @s: pointer to the string params
@@ -14,6 +12,8 @@ char *rot13(char *s)
 	int j;
 
 	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
