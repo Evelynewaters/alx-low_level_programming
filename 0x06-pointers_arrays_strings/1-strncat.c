@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * _strcat - concatenates two strings
+ * _strncat - concatenates two strings
  * using at most n bytes from src
  * @dest: input value
  * @src: input value
+ * @n: maximum number of bytes to be appended from src
  *
  * Return: dest
  */
