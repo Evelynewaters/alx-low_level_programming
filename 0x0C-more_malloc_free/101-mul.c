@@ -16,6 +16,7 @@ int is_digit(char *s)
 		{
 			return (0);
 		}
+		i++;
 	}
 	return (1);
 }
@@ -64,7 +65,7 @@ int main(int argc, char *argv[])
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
 	result = malloc(sizeof(int) * len);
-	if (result)
+	if (!result)
 		return (1);
 	for (i = 0; i <= len1 + len2; i++)
 		result[i] = 0;
