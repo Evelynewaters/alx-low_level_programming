@@ -1,29 +1,48 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
- * binary_to_uint - Converts binary to unsigned int
- * @binary: binary given
- * Return: Converted number
+ * _pow - Returns the value of x raised to the power of y.
+ * @x: The number to be raised
+ * @y: The power
+ * Return: The value of x raised to the power of y.
  */
-unsigned int binary_to_uint(const char *binary)
+int _pow(int x, int y)
+{
+	int result = x;
+
+	if (y < 0)
+		return (-1);
+	else if (y == 0)
+		return (1);
+	result *= _pow(x, y - 1);
+	return (result);
+}
+
+/**
+ * binary_to_uint - binary to decimal
+ * @b: binary
+ * Description: binary conversion;
+ * Return: decimal number
+ */
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int result = 0;
-	int length = strlen(binary);
-	int i;
+	int i = 0;
 
-	for (i = length - 1; i >= 0; i--)
+	if (b == NULL)
+		return (0);
+
+	for (i = 0; b[i] != '\0'; i++)
 	{
-		if (binary[i] == '1')
+		if (b[i] == '0' || b[i] == '1')
 		{
-			result += pow(2, length - 1 - i);
+			result = result << 1;
+			if (b[i] == '1')
+				result = result | 1;
 		}
-		else if (binary[i] != '0')
-		{
+		else
 			return (0);
-		}
 	}
-
 	return (result);
 }
